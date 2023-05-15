@@ -72,7 +72,7 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
-    background: url(../images/bg_main.jpeg) no-repeat center center / cover;
+    background: url(../images/bg_main.png) no-repeat center center / cover;
   }
 
   #main2 {
@@ -80,7 +80,7 @@ main {
     height: 100%;
     display: flex;
     align-items: center;
-    background: url(../images/bg_main1.jpeg) no-repeat center center / cover;
+    background: url(../images/bg_main1.png) no-repeat center center / cover;
   }
 
   .swiper-slide-active .main_txt {
@@ -432,7 +432,7 @@ main {
         margin-left: 10px;
       }
     }
-
+    
     .card-bg {
       width: 100%;
       height: 100%;
