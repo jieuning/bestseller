@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
   // 메인 슬라이드
-  var mainSwiper = new Swiper("#main_slide", {
+  let mainSwiper = new Swiper("#main_slide", {
     loop: true,
     autoplay: {
       delay: 6000,
@@ -8,7 +8,7 @@ jQuery(document).ready(function () {
     },
   });
   // 메뉴 슬라이드
-  var sllerSwiper = new Swiper("#seller_swiper", {
+  let sllerSwiper = new Swiper("#seller_swiper", {
     loop: true,
     slidesPerView: 'auto',
     spaceBetween: 24,
@@ -34,14 +34,14 @@ jQuery(document).ready(function () {
 
   /* faq 아코디언메뉴 */
   $(".faq-head").click(function () {
-    var btn = $(this);
-    var sub = btn.siblings(".faq-content");
+    let btn = $(this);
+    let sub = btn.siblings(".faq-content");
 
     $(".faq-content").not(sub).slideUp(); // 다른 요소를 클릭하면 전에 클릭했던 요소가 닫힌다
     sub.slideToggle();
 
     /* btn 디자인 */
-    var li = btn.parent(); // 클릭한 .faq-head의 부모 요소 대입
+    let li = btn.parent(); // 클릭한 .faq-head의 부모 요소 대입
     $(".faq-list > ul > li").not(li).removeClass("arrow_action"); // 클릭한 faq-head의 부모 요소를 제외한 li를 선택해서 arrow_action클래스가 있을 경우 제거
     li.toggleClass("arrow_action");
   });
