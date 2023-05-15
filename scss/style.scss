@@ -1,0 +1,682 @@
+@charset "uft-8";
+
+// 공용 클래스
+* {
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  box-sizing: border-box;
+}
+
+// 탑 네비게이션
+nav {
+  width: 100%;
+  position: absolute;
+  /* nav 높이 인식 못하여 헤더 위로 겹쳐지게 됨 */
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  #nav {
+    max-width: 1412px;
+    margin: 0 auto;
+    display: flex;
+    padding: 42px 0;
+
+    li:not(:last-child) {
+      margin-right: 26px;
+    }
+
+    a {
+      font: 16px/1.5 "Spoqa Han Sans Neo";
+      font-weight: bold;
+      color: #262626;
+    }
+
+    .logo a {
+      display: block;
+      width: 123px;
+      height: 28px;
+      background: url("../images/bs_logo.svg") no-repeat center center / cover;
+      margin-right: 62px;
+      /* a 안의 텍스트 숨김 */
+      font-size: 0;
+      line-height: 400px;
+      overflow: hidden;
+      color: transparent;
+      text-indent: -9999px;
+    }
+
+  }
+
+}
+// 탑 네비게이션 끝
+
+main {
+  .section {
+    width: 100%;
+    height: 100vh;
+    /* vh, vw - 디바이스 크기 디바이스 부모 대비 크기*/
+    min-height: 820px;
+    position: relative;
+  }
+
+  // 메인 슬라이드
+  #main_slide {
+    width: 100%;
+    height: 100vh;
+    min-height: 820px;
+    position: relative;
+  }
+
+  #main1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url(../images/bg_main.jpeg) no-repeat center center / cover;
+  }
+
+  #main2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url(../images/bg_main1.jpeg) no-repeat center center / cover;
+  }
+
+  .swiper-slide-active .main_txt {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .4s;
+  }
+
+  .main_txt {
+    opacity: 0;
+    transform: translateY(50px);
+    margin-bottom: 30px;
+    transition: all .4s;
+  }
+
+  .swiper-slide-active .btn_area {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: .7s;
+  }
+
+  .btn_area {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all .4s;
+  }
+
+  .main_inner {
+    width: 100%;
+    max-width: 1412px; //width로 주고 max 로 잡는게 반응형 만들기 좋다
+    margin: 0 auto;
+    padding: 0 24px;
+
+    p {
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 1.25; //폰트 사이즈 64px 대비 1.25배로 행간을 주겠다
+
+      span {
+        position: relative;
+        padding-right: 60px;
+        margin-right: 8px;
+      }
+
+      span::after {
+        content: '';
+        display: block;
+        width: 58px;
+        height: 39px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        background: url(../images/it.png) no-repeat center / cover;
+      }
+
+    }
+
+    .btn_wrapper {
+      font-size: 0;
+      margin-top: 15px;
+
+      a {
+        margin-right: 6px;
+      }
+    }
+
+    .slide_btn {
+      font-size: 20px;
+      font-weight: 500;
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      line-height: 1;
+      padding: 16px 30px 14px;
+      border-radius: 34px;
+      transition: all .3s;
+    }
+
+    .slide_btn:hover {
+      background: #ad96fd;
+    }
+  }
+  // 메인 슬라이드 끝
+
+  // 베스트셀러 영역
+  #bestseller {
+    background: url(../images/bg_gradient.jpeg) no-repeat center / cover;
+
+    .section_inner {
+      padding-left: calc((100% - 1358px)/ 2);
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+    }
+
+    .text_title.scroll {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .text_title {
+      margin-bottom: 170px;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: all .4s;
+      transition-delay: .2s;
+
+      p {
+        font-size: 48px;
+        line-height: 1.25;
+      }
+
+      .text_bold {
+        font-weight: bold;
+      }
+
+      span {
+        position: relative;
+        padding-right: 20px;
+      }
+
+      span::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background: url("../images/ic_it.png") no-repeat center / cover;
+      }
+    }
+
+    .seller_btn.scroll {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .seller_btn {
+      display: inline-block;
+      background: #262626;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px 20px;
+      border-radius: 14px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all .4s;
+      transition-delay: .2s;
+
+      span {
+        display: inline-block;
+        position: relative;
+        padding-right: 18px;
+      }
+
+      span::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 0;
+        width: 8px;
+        height: 11px;
+        background: url(../images/ic_arrow.png) no-repeat right / cover;
+        transform: rotate(180deg);
+      }
+    }
+
+    .seller_txt.scroll {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .seller_txt {
+      margin-top: 28px;
+      font-weight: 500;
+      color: #9d9d9d;
+      line-height: 1.3;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all .4s;
+      transition-delay: .3s;
+    }
+
+    .highlight {
+      margin-top: 0;
+      color: #ab96fd;
+    }
+
+    // 스와이퍼 슬라이드
+    #seller_swiper {
+      width: calc(100% - (382px + 66px)); // 식과 산술기호 띄어쓰기
+      margin-right: 0;
+      margin-left: auto;
+      position: relative; // 스와이퍼가 잘 들어가려면 포지션 값을 줘야한다.
+      overflow: hidden;
+      padding-bottom: 40px;
+
+      .swiper-slide {
+        width: 332px;
+        height: 500px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        flex-direction: column;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .seller_item_inner {
+        background: #fff;
+        width: 100%;
+        padding: 32px;
+
+        .title {
+          font-size: 19px;
+          color: #9d9d9d;
+          letter-spacing: -0.02em;
+          margin-bottom: 15px;
+          transform: translateY(0);
+          opacity: 1;
+
+        }
+
+        .sub_title {
+          font-size: 16px;
+          font-weight: bold;
+          color: #ab96fd;
+          margin-bottom: 4px;
+        }
+
+        .price {
+          font-size: 32px;
+          font-weight: bold;
+        }
+      }
+
+      .slide1 {
+        background: url(../images/seller2.jpg) no-repeat center / cover;
+      }
+
+      .slide2 {
+        background: url(../images/seller3.jpg) no-repeat center / cover;
+      }
+
+      .slide3 {
+        background: url(../images/seller4.jpg) no-repeat center / cover;
+      }
+
+      .slide4 {
+        background: url(../images/seller5.jpg) no-repeat center / cover;
+      }
+
+      // 페이지네이션
+      .seller_pager {
+        position: absolute;
+        top: auto; // 기존 탑값 없애기
+        bottom: 0;
+        z-index: 10;
+
+        span {
+          background: #5d4f79;
+        }
+      } // 페이지네이션 끝
+    } // 스와이퍼 슬리이드 끝
+  } //베스트셀러 영역 끝
+
+  // 타이틀 Y축 애니메이션
+  .title.scroll {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 45px;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all .4s;
+  }
+
+  // 리뷰 영역
+  #review {
+    width: 100%;
+    max-width: 1412px;
+    padding: 180px 24px;
+    margin: 0 auto;
+
+    .review_item.scroll {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .review_item {
+      display: flex;
+      flex-wrap: wrap;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: all .4s;
+    }
+
+    .card {
+      width: calc(50% - 12px);
+      height: 622px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      padding: 40px 44px 0;
+      margin-bottom: 24px;
+    }
+
+    .card:nth-child(2n) {
+      margin-left: 24px;
+    }
+
+    .card-title {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .card-title::after {
+      content: '';
+      display: block;
+      width: 33px;
+      height: 33px;
+      background: url(../images/ic_plus.png) no-repeat center / cover;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+    }
+
+    .card-profile {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-left: 10px;
+      }
+    }
+
+    .card-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      /* 포지션 값으로 패딩이 무시되어 영역에 꽉차게 나온다 */
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .card-hover {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      cursor: pointer;
+      transform: translateY(150px);
+      opacity: 0;
+
+      .card-subtitle {
+        margin-bottom: 7px;
+        letter-spacing: -0, 01em; // 포토샵 기준 자간 -10px
+
+        span {
+          display: inline-block;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 0.9;
+        }
+
+        span:nth-child(2) {
+          margin-left: 10px;
+          border-left: 2px solid #262626;
+          padding-left: 10px;
+        }
+      }
+
+      .comment {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .content {
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-top: 24px;
+      }
+
+      .ui-img {
+        max-width: 78%;
+        margin: 35px auto 0;
+      }
+    }
+
+    .card:nth-child(1) .card-bg {
+      background: url(../images/bg_review1.jpg) no-repeat center / cover;
+    }
+
+    .card:nth-child(2) .card-bg {
+      background: url(../images/bg_review2.jpeg) no-repeat center / cover;
+    }
+
+    .card:nth-child(3) .card-bg {
+      background: url(../images/bg_review3.jpg) no-repeat center / cover;
+    }
+
+    .card:nth-child(4) .card-bg {
+      background: url(../images/bg_review4.jpg) no-repeat center / cover;
+    }
+  }
+  // 리뷰 영역 끝
+
+  // 큐앤에이 영역
+  #faq {
+    max-width: 1412px;
+    margin: 0 auto;
+    padding: 100px 24px 190px;
+    letter-spacing: -0.01em;
+
+    .faq-list.scroll {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-wrap: wrap;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: all .4s;
+
+      ul {
+        width: 49%; // 중간의 간격을 제외하여 50이 아닌 49
+        overflow: hidden;
+      }
+
+      ul:first-child {
+        margin-right: 2%;
+      }
+
+      li {
+        padding: 35px 0;
+        border-bottom: 1px solid #c1c1c1;
+      }
+
+      li.arrow_action .faq-head::after {
+        transform: rotate(0);
+      }
+    }
+
+    .faq-head {
+      font-size: 28px;
+      font-weight: 700;
+      padding: 0 50px 0 20px;
+      cursor: pointer;
+      display: flex;
+      position: relative;
+
+      span {
+        font-size: 34px;
+        line-height: 1;
+        color: #ad96fd;
+        margin-right: 16px;
+        margin-top: -2.5px;
+      }
+    }
+
+    // 클릭시 화살표 버튼 rotate
+    .faq-head::after {
+      display: block;
+      content: '';
+      width: 21.5px;
+      height: 12px;
+      background: url(../images/ic_arrow_faq.png) no-repeat center / 100%;
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      transform: rotate(180deg);
+      transition: .3s;
+    }
+
+    .faq-content {
+      color: #9d9d9d;
+      line-height: 1.8;
+      padding: 15px 58px;
+      display: none;
+    }
+
+  }
+
+}
+ // 큐앤에이 영역 끝
+
+// 푸터 영역
+footer {
+  background: #262626;
+  font-family: 'Spoqa Han Sans Neo' !important;
+
+  .footer_wrap {
+    max-width: 1412px;
+    margin: 0 auto;
+    padding: 36px 24px;
+    position: relative;
+  }
+
+  .footer_menu {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    letter-spacing: -0.01em; // 포토샵 기준 -10px
+    margin-bottom: 10px;
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      margin-left: 20px;
+    }
+
+    li:not(:last-child) {
+      margin-right: 26px;
+    }
+
+    li>a {
+      font-size: 14px;
+      font-weight: 500; //레귤러 사이즈
+    }
+  }
+
+  .footer_info {
+    .info_txt {
+      max-width: 1000px;
+      font-size: 0;
+      padding-right: 100px;
+
+      span {
+        font-size: 12px;
+        line-height: 1;
+        color: #c1c1c1;
+        font-weight: 500;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        display: inline-block;
+      }
+
+      span:not(:last-child) {
+        border-right: 1px solid #c1c1c1;
+        margin-right: 6px;
+        padding-right: 6px; // 보더 선과 선 사이의 사이 간격 떨어뜨릴때 이렇게 사용함
+      }
+    }
+
+    .sns_group {
+      position: absolute;
+      bottom: 36px;
+      right: 24px;
+
+      a {
+        display: inline-block;
+        font-size: 0;
+        width: 36px;
+        height: 36px;
+      }
+
+      .insta {
+        background: url(../images/ic_insta.png) no-repeat center center / cover;
+        margin-right: 5px;
+      }
+
+      .blog {
+        background: url(../images/ic_blog.png) no-repeat center center / cover;
+      }
+    }
+
+    .copyright {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+  }
+
+} // 푸터 영역 끝
