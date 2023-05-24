@@ -6,7 +6,16 @@
   box-sizing: border-box;
 }
 
-// 탑 네비게이션
+.hidden {
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  z-index: 99999;
+}
+
+// ----- 탑 네비게이션 -----
 nav {
   width: 100%;
   position: absolute;
@@ -48,8 +57,8 @@ nav {
   }
 
 }
-// 탑 네비게이션 끝
 
+// ----- 메인 -----
 main {
   .section {
     width: 100%;
@@ -110,14 +119,14 @@ main {
 
   .main_inner {
     width: 100%;
-    max-width: 1412px; //width로 주고 max 로 잡는게 반응형 만들기 좋다
+    max-width: 1412px;
     margin: 0 auto;
     padding: 0 24px;
 
     p {
       font-size: 64px;
       font-weight: bold;
-      line-height: 1.25; //폰트 사이즈 64px 대비 1.25배로 행간을 주겠다
+      line-height: 1.25; //폰트 사이즈 64px 대비 1.25배로 행간
 
       span {
         position: relative;
@@ -163,9 +172,8 @@ main {
       background: #ad96fd;
     }
   }
-  // 메인 슬라이드 끝
 
-  // 베스트셀러 영역
+  // ----- 베스트셀러 영역 -----
   #bestseller {
     background: url(../images/bg_gradient.jpeg) no-repeat center / cover;
 
@@ -348,9 +356,9 @@ main {
         span {
           background: #5d4f79;
         }
-      } // 페이지네이션 끝
-    } // 스와이퍼 슬리이드 끝
-  } //베스트셀러 영역 끝
+      }
+    }
+  }
 
   // 타이틀 Y축 애니메이션
   .title.scroll {
@@ -368,7 +376,7 @@ main {
     transition: all .4s;
   }
 
-  // 리뷰 영역
+  // ----- 리뷰 영역 -----
   #review {
     width: 100%;
     max-width: 1412px;
@@ -432,7 +440,7 @@ main {
         margin-left: 10px;
       }
     }
-    
+
     .card-bg {
       width: 100%;
       height: 100%;
@@ -454,7 +462,7 @@ main {
 
       .card-subtitle {
         margin-bottom: 7px;
-        letter-spacing: -0, 01em; // 포토샵 기준 자간 -10px
+        letter-spacing: -0.01em; // 포토샵 기준 자간 -10px
 
         span {
           display: inline-block;
@@ -503,9 +511,8 @@ main {
       background: url(../images/bg_review4.jpg) no-repeat center / cover;
     }
   }
-  // 리뷰 영역 끝
 
-  // 큐앤에이 영역
+  // ----- 큐앤에이 영역 -----
   #faq {
     max-width: 1412px;
     margin: 0 auto;
@@ -580,13 +587,10 @@ main {
       padding: 15px 58px;
       display: none;
     }
-
   }
-
 }
- // 큐앤에이 영역 끝
 
-// 푸터 영역
+// ----- 푸터 영역 -----
 footer {
   background: #262626;
   font-family: 'Spoqa Han Sans Neo' !important;
@@ -644,7 +648,7 @@ footer {
       span:not(:last-child) {
         border-right: 1px solid #c1c1c1;
         margin-right: 6px;
-        padding-right: 6px; // 보더 선과 선 사이의 사이 간격 떨어뜨릴때 이렇게 사용함
+        padding-right: 6px; // 보더 선과 선 사이의 사이 간격
       }
     }
 
@@ -676,7 +680,5 @@ footer {
       font-weight: 500;
       color: #fff;
     }
-
   }
-
-} // 푸터 영역 끝
+}
